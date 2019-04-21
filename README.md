@@ -21,8 +21,10 @@ HScada目前只支持了西门子s7协议
 我将持续维护这个框架.
 你的支持,就是我的动力
 
-# 接下来的开发路线
+#引用其他框架
+sqlsugar: https://github.com/sunkaixuan/SqlSugar
+Metro UI: https://github.com/MahApps/MahApps.Metro
 
-.扩展数据库仓储.  
+# 接下来的开发路线
 .扩展三菱MC协议. 
 .扩展工业控件库. 
