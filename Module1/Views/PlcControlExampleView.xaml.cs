@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Module1.Views
 {
     /// <summary>
-    /// _05_History.xaml 的交互逻辑
+    /// PlcControlExampleView.xaml 的交互逻辑
     /// </summary>
-    public partial class _05_History : UserControl
+    public partial class PlcControlExampleView : UserControl
     {
-        public _05_History()
+        public PlcControlExampleView()
         {
             InitializeComponent();
         }

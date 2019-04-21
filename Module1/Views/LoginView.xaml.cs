@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Module1.Views
 {
     /// <summary>
-    /// _04_Chart.xaml 的交互逻辑
+    /// _00_login.xaml 的交互逻辑
     /// </summary>
-    public partial class _04_Chart : UserControl
+    public partial class LoginView : UserControl
     {
-        public _04_Chart()
+        public LoginView()
         {
             InitializeComponent();
         }

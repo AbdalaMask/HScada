@@ -26,6 +26,7 @@ namespace Client
         public Shell(IRegionManager rm)
         {
             InitializeComponent();
+            this.MaxHeight = SystemParameters.MaximizedPrimaryScreenHeight;
         }
 
         private void Window_Closed(object sender, EventArgs e)

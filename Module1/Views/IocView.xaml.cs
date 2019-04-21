@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Module1.Views
 {
     /// <summary>
-    /// _03_parameter.xaml 的交互逻辑
+    /// IocView.xaml 的交互逻辑
     /// </summary>
-    public partial class _03_parameter : UserControl
+    public partial class IocView : UserControl
     {
-        public _03_parameter()
+        public IocView(HScada.Services.Contract.ILog log)
         {
             InitializeComponent();
         }

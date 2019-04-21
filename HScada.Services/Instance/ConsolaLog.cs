@@ -11,30 +11,22 @@ namespace HScada.Services.Instance
     {
         public void Debug(string mesg)
         {
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Debug: "+mesg);
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }
 
         public void Fualt(string mesg)
         {
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Fualt: " + mesg);
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }
 
         public void Info(string mesg)
         {
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
-            Console.WriteLine("Info: " + mesg);
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
+            Console.WriteLine("Message: " + mesg);
         }
 
         public void Waring(string mesg)
         {
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
             Console.WriteLine("Waring: " + mesg);
-            Console.WriteLine("++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++");
         }
     }
 }

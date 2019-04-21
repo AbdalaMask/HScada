@@ -16,11 +16,11 @@ using System.Windows.Shapes;
 namespace Module1.Views
 {
     /// <summary>
-    /// _08_Alarm.xaml 的交互逻辑
+    /// ColorExampleView.xaml 的交互逻辑
     /// </summary>
-    public partial class _08_Alarm : UserControl
+    public partial class ColorExampleView : UserControl
     {
-        public _08_Alarm()
+        public ColorExampleView()
         {
             InitializeComponent();
         }
