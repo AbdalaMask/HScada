@@ -27,5 +27,6 @@ sqlsugar: https://github.com/sunkaixuan/SqlSugar
 Metro UI: https://github.com/MahApps/MahApps.Metro
 
 # 接下来的开发路线
-.扩展三菱MC协议. 
-.扩展工业控件库. 
+.变量配置的导入导出功能
+.扩展三菱MC协议
+.扩展工业控件库
