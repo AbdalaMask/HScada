@@ -8,11 +8,11 @@
              d:DesignHeight="450" d:DesignWidth="800">
     <Grid>
         <StackPanel>
-            <TextBox Text="主题色1" Foreground="White" Height="20" Background="{DynamicResource 主题色1}"/>
-            <TextBox Text="主题色2" Foreground="White" Height="20" Background="{DynamicResource 主题色2}"/>
-            <TextBox Text="主题色3" Foreground="White" Height="20" Background="{DynamicResource 主题色3}"/>
-            <TextBox Text="主题色4" Foreground="White" Height="20" Background="{DynamicResource 主题色4}"/>
-            <TextBox Text="主题色5" Foreground="White" Height="20" Background="{DynamicResource 主题色5}"/>
+            <TextBlock Text="主题色1" Foreground="White" Height="50" Background="{DynamicResource 主题色1}"/>
+            <TextBlock Text="主题色2" Foreground="White" Height="50" Background="{DynamicResource 主题色2}"/>
+            <TextBlock Text="主题色3" Foreground="White" Height="50" Background="{DynamicResource 主题色3}"/>
+            <TextBlock Text="主题色4" Foreground="White" Height="50" Background="{DynamicResource 主题色4}"/>
+            <TextBlock Text="主题色5" Foreground="White" Height="50" Background="{DynamicResource 主题色5}"/>
         </StackPanel>
     </Grid>
 </UserControl>

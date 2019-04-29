@@ -3,12 +3,19 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:vm="clr-namespace:Module1.ViewModels"
              xmlns:local="clr-namespace:Module1.Views"
              xmlns:plc="http://hbb.HScada/Control/Siemens"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
+    <UserControl.DataContext>
+        <vm:PlcControlExampleViewModel/>
+    </UserControl.DataContext>
     <Canvas>
-        <plc:CheckBox VarName="Plc.变量组.变量名" />
-            <plc:TextArea VarName="Plc.变量组.变量名" Canvas.Left="7" Canvas.Top="36"    />
+        <plc:CheckBox VarName="plc1.group1.mybit_1" Canvas.Left="161" Canvas.Top="38" />
+        <plc:TextArea VarName="plc1.group1.mybit_1" Canvas.Left="7" Canvas.Top="200"    />
+        <plc:TextArea VarName="plc1.group1.mybtye" Canvas.Left="7" Canvas.Top="36"    />
+        <plc:TextArea VarName="plc1.group1.myshort" Canvas.Left="7" Canvas.Top="100"    />
+        <plc:TextArea VarName="plc1.group1.myint" Canvas.Left="7" Canvas.Top="150"    />
     </Canvas>
 </UserControl>
