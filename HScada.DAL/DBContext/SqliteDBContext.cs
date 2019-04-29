@@ -44,11 +44,11 @@ namespace HScada.DAL.DBContext
             };
             db.Aop.OnLogExecuting = (sql, pars) => //SQL executing event (pre-execution) 执行前
             {
-                SqlLog.Info($"sql执行前:\n参数{pars}\nsql:{sql}");
+                SqlLog.Info($"sql执行前:\n参数:\n{string.Join(",", pars.Select(s => $"{s.ParameterName}:{s.Value}"))}\n\nsql语句:\n{sql}");
             };
             db.Aop.OnError = (exp) =>//SQL execution error event 执行错误
             {
-                SqlLog.Info($"sql执行前:\n参数:\n{string.Join(",", pars.Select(s => $"{s.ParameterName}:{s.Value}"))}\n\nsql语句:\n{sql}");
+                SqlLog.Fault($"异常:\n{exp.Message}");
             };
         }
     }
