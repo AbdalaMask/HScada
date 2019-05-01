@@ -28,17 +28,17 @@ namespace Module1.Views
         {
             InitializeComponent();
             _log = log;
-            var plc = HScada.PLCModule.PlcModule.SiemensPlc.First(t => t.Name == "plc");
-            var group = plc.VarGroupList.First(t => t.Name == "group");
-            mybit = group.VarList.First(t => t.VarName == "mybit");
+            //var plc = HScada.PLCModule.PlcModule.SiemensPlc.First(t => t.Name == "plc");
+            //var group = plc.VarGroupList.First(t => t.Name == "group");
+            //mybit = group.VarList.First(t => t.VarName == "mybit");
 
-            group.OnVarGroupRead -= OngroupRead;
-            mybit.OnValueChanged -= OnPlcVarValueChanged;
-            group.OnVarGroupRead += OngroupRead;
-            mybit.OnValueChanged += OnPlcVarValueChanged;
+            //group.OnVarGroupRead -= OngroupRead;
+            //mybit.OnValueChanged -= OnPlcVarValueChanged;
+            //group.OnVarGroupRead += OngroupRead;
+            //mybit.OnValueChanged += OnPlcVarValueChanged;
 
-            System.Threading.Thread mythread = new System.Threading.Thread(myThreadExecuteMethod) { IsBackground = true };
-            mythread.Start();
+            //System.Threading.Thread mythread = new System.Threading.Thread(myThreadExecuteMethod) { IsBackground = true };
+            //mythread.Start();
         }
 
         private void myThreadExecuteMethod()
