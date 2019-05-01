@@ -63,6 +63,7 @@
   <ItemGroup>
     <Compile Include="Instance\ConsolaLog.cs" />
     <Compile Include="Contract\ILog.cs" />
+    <Compile Include="Instance\DBLOG.cs" />
     <Compile Include="Module_ServicesModule.cs" />
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>

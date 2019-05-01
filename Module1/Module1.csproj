@@ -126,11 +126,15 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\ExampleViewModel.cs" />
     <Compile Include="ViewModels\PlcControlExampleViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\SqliteTestViewModel.cs" />
     <Compile Include="Views\ColorExampleView.xaml.cs">
       <DependentUpon>ColorExampleView.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\ExampleView.xaml.cs">
+      <DependentUpon>ExampleView.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginView.xaml.cs">
       <DependentUpon>LoginView.xaml</DependentUpon>
@@ -166,6 +170,10 @@
   </ItemGroup>
   <ItemGroup>
     <Page Include="Views\ColorExampleView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\ExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

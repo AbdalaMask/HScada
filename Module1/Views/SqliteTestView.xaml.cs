@@ -1,5 +1,6 @@
 ﻿using HScada.DAL.DBContext;
 using HScada.DAL.Model;
+using HScada.PLCModule.Model;
 using HScada.Services.Contract;
 using System;
 using System.Collections.Generic;
@@ -23,12 +24,16 @@ namespace Module1.Views
     /// </summary>
     public partial class SqliteTestView : UserControl
     {
+        
         ILog _log;
+
         public SqliteTestView(ILog log)
         {
             _log = log;
             InitializeComponent();
         }
+
+
         //建表
         private void Button_Click(object sender, RoutedEventArgs e)
         {

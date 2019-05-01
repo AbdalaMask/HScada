@@ -23,6 +23,14 @@ namespace Module1
         public void RegisterTypes(IContainerRegistry containerRegistry)
         {
             List<MenuMes> menus = new List<MenuMes>();
+
+            menus.Add(new MenuMes
+            {
+                IconName = "Material_HeartBoxOutline",
+                MenuName = "first class",
+                PageType = typeof(Views.ExampleView),
+            });
+
             menus.Add(new MenuMes
             {
                 IconName = "Entypo_RoundBrush",
@@ -49,6 +57,7 @@ namespace Module1
                 MenuName = "PLC变量配置",
                 PageType = typeof(PlcConfigView)
             });
+
 
             HBBFrameWorkHelper.Instance.RegisterMenu(menus,typeof(Views.LoginView));
 
