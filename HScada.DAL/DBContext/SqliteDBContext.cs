@@ -26,11 +26,12 @@ namespace HScada.DAL.DBContext
                 InitKeyType = InitKeyType.Attribute,//Code first请用这个枚举
                 ConfigureExternalServices = new ConfigureExternalServices
                 {
-                    EntityService = (property, column) => {
-                        column.IsIgnore = (new List<string>
+                    EntityService = (property, column) =>
+                    {
+                        if (column.DbTableName == "Person" && property.Name == "Children")
                         {
-                            "Children"
-                        }).Any(a => a == property.Name);
+                            column.IsIgnore = true;
+                        }
                     },
                 }
             });
@@ -39,11 +40,11 @@ namespace HScada.DAL.DBContext
 
             db.Aop.OnLogExecuted = (sql, pars) => //SQL executed event 执行后
             {
-                SqlLog.Info($"sql已执行:\n参数{pars}\nsql:{sql}");
+                SqlLog.Info($"sql已执行:\n参数:\n{string.Join(",", pars.Select(s => $"{s.ParameterName}:{s.Value}"))}\n\nsql语句:\n{sql}");
             };
             db.Aop.OnLogExecuting = (sql, pars) => //SQL executing event (pre-execution) 执行前
             {
-                SqlLog.Info($"sql执行前:\n参数{pars}\nsql:{sql}");
+                SqlLog.Info($"sql执行前:\n参数:\n{string.Join(",", pars.Select(s => $"{s.ParameterName}:{s.Value}"))}\n\nsql语句:\n{sql}");
             };
             db.Aop.OnError = (exp) =>//SQL execution error event 执行错误
             {
