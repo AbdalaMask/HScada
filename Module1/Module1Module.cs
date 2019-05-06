@@ -24,12 +24,6 @@ namespace Module1
         {
             List<MenuMes> menus = new List<MenuMes>();
 
-            menus.Add(new MenuMes
-            {
-                IconName = "Material_HeartBoxOutline",
-                MenuName = "first class",
-                PageType = typeof(Views.ExampleView),
-            });
 
             menus.Add(new MenuMes
             {

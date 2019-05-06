@@ -11,11 +11,22 @@
     <UserControl.DataContext>
         <vm:PlcControlExampleViewModel/>
     </UserControl.DataContext>
+    <UserControl.Resources>
+</UserControl.Resources>
     <Canvas>
-        <TextBlock Text="test var" Canvas.Left="99" Canvas.Top="36"/>
-        <TextBlock Text="test var" Canvas.Left="99" Canvas.Top="139"/>
-        <plc:CheckBox VarName="plc.group.mybit" Canvas.Left="161" Canvas.Top="38" />
-        <plc:CheckBox VarName="plc.group2.mybit" Canvas.Left="200" Canvas.Top="38" />
-        <plc:TextArea VarName="plc.group.myshort" Canvas.Left="160" Canvas.Top="131"    />
+        <plc:CheckBox VarName="plc1.group1.myb"   Canvas.Left="231" Canvas.Top="151" />
+        <plc:ToggleSwitch Name="toggles" 
+                          OnLabel="hehe"
+                          OffLabel="haha"
+                          VarName="plc1.group1.mybit_1"   
+                          Canvas.Left="285"
+                          Canvas.Top="148" />
+        <!--<plc:CheckBox VarName="plc1.group1.mybit_3"  Canvas.Left="415" Canvas.Top="162" />-->
+        <plc:TextArea VarName="plc1.group1.mybtye" Canvas.Left="166" Canvas.Top="247"    />
+        <plc:TextArea VarName="plc1.group1.mybtye" Canvas.Left="166" Canvas.Top="83"    />
+        <plc:TextArea VarName="plc1.group1.mybit_1" Canvas.Left="166" Canvas.Top="147"    />
+        <plc:TextArea VarName="plc1.group1.mybit_2" Canvas.Left="166" Canvas.Top="197"    />
+        <plc:Slider  VarName="plc1.group1.mybtye"  Canvas.Left="229" Canvas.Top="82" Width="250"   />
+        <plc:ProgressBar VarName="plc1.group1.mybtye" Width="250" Height="5" Background="LightGray" Canvas.Left="230" Canvas.Top="24" />
     </Canvas>
 </UserControl>
