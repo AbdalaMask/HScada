@@ -12,21 +12,74 @@
         <vm:PlcControlExampleViewModel/>
     </UserControl.DataContext>
     <UserControl.Resources>
-</UserControl.Resources>
+    </UserControl.Resources>
     <Canvas>
-        <plc:CheckBox VarName="plc1.group1.myb"   Canvas.Left="231" Canvas.Top="151" />
+        <!--
+        复选框
+        VarName :PLC变量 只能是bit类型
+        -->
+        <plc:CheckBox VarName="plc1.group1.myb"  
+                      Canvas.Left="231" 
+                      Canvas.Top="151" />
+
+        <!--
+        拨动开关
+        OnLabel :   on状态时要显示label,可以不设置
+        offLabel:   off状态时要显示label,可以不设置
+        VarName:    PLC变量 只能是bit类型
+        -->
         <plc:ToggleSwitch Name="toggles" 
                           OnLabel="hehe"
                           OffLabel="haha"
-                          VarName="plc1.group1.mybit_1"   
+                          VarName="plc1.group1.mybi"   
                           Canvas.Left="285"
                           Canvas.Top="148" />
-        <!--<plc:CheckBox VarName="plc1.group1.mybit_3"  Canvas.Left="415" Canvas.Top="162" />-->
-        <plc:TextArea VarName="plc1.group1.mybtye" Canvas.Left="166" Canvas.Top="247"    />
-        <plc:TextArea VarName="plc1.group1.mybtye" Canvas.Left="166" Canvas.Top="83"    />
-        <plc:TextArea VarName="plc1.group1.mybit_1" Canvas.Left="166" Canvas.Top="147"    />
-        <plc:TextArea VarName="plc1.group1.mybit_2" Canvas.Left="166" Canvas.Top="197"    />
-        <plc:Slider  VarName="plc1.group1.mybtye"  Canvas.Left="229" Canvas.Top="82" Width="250"   />
-        <plc:ProgressBar VarName="plc1.group1.mybtye" Width="250" Height="5" Background="LightGray" Canvas.Left="230" Canvas.Top="24" />
+
+        <!--
+        文本域
+        VarName PLC变量 可以是任意类型的变量
+        -->
+        <plc:TextArea VarName="plc1.group1.mybt"
+                      Canvas.Left="166" 
+                      Canvas.Top="247"    />
+        <plc:TextArea VarName="plc1.group1.mybty"
+                      Canvas.Left="166"
+                      Canvas.Top="83"    />
+        <plc:TextArea VarName="plc1.group1.mybi_1" 
+                      Canvas.Left="166" Canvas.Top="147" />
+        <plc:TextArea VarName="plc1.group1.myit_2"
+                      Canvas.Left="166"
+                      Canvas.Top="197"    />
+
+        <!--
+        滑动块
+        VarName PLC变量 可以是数值类型的变量
+        Orientation             :横或竖
+        TickFrequency           :每个刻度代表的值 
+        Ticks                   :刻度集合(Ticks覆盖TickFrequency)
+        Minimum                 :下限
+        Maximum                 :上限
+        TickPlacement           :刻度的位置
+        AutoToolTipPlacement    :气泡的位置
+        -->
+        <plc:Slider  VarName="plc1.group1.mybte" 
+                     Orientation="Horizontal"
+                     TickFrequency="30"                     
+                     Minimum="0"
+                     Maximum="255"
+                     TickPlacement="TopLeft"
+                     AutoToolTipPlacement="TopLeft"
+                     Canvas.Left="229"
+                     Canvas.Top="82" 
+                     Width="250"   />
+
+        <!--进度条
+        VarName PLC变量 可以是数值类型的变量
+        -->
+        <plc:ProgressBar VarName="plc1.group1.mbtye" 
+                         Width="250"
+                         Height="5" 
+                         Background="LightGray"
+                         Canvas.Left="229" Canvas.Top="59" />
     </Canvas>
 </UserControl>

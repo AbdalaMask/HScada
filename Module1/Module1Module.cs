@@ -53,7 +53,12 @@ namespace Module1
             });
 
 
-            HBBFrameWorkHelper.Instance.RegisterMenu(menus,typeof(Views.LoginView));
+            HBBFrameWorkHelper.Instance.RegisterMenu(
+                menus,
+                typeof(Views.LoginView),
+                typeof(Views.TitelArea),
+                typeof(Views.StateBarArea)                
+                );
 
         }
 
