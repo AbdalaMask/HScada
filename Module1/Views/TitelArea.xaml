@@ -6,7 +6,7 @@
              xmlns:local="clr-namespace:Module1.Views"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel Orientation="Horizontal">
+    <StackPanel Orientation="Horizontal" Margin=" 5 0">
         <HScadaIcon IconName="Material_Heart" Fill="{DynamicResource 主题色5}" Width="20" />
         <TextBlock Foreground="{DynamicResource 主题色5}" Text="这里也是~"/>
     </StackPanel>

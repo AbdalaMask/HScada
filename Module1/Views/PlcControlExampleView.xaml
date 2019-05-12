@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:vm="clr-namespace:Module1.ViewModels"
              xmlns:local="clr-namespace:Module1.Views"
-             xmlns:plc="http://hbb.HScada/Control/Siemens"
+             xmlns:plc="http://hbb.HScada/PlcControl"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -75,6 +75,9 @@
 
         <!--进度条
         VarName PLC变量 可以是数值类型的变量
+        Minimum                 :下限
+        Maximum                 :上限
+
         -->
         <plc:ProgressBar VarName="plc1.group1.mbtye" 
                          Width="250"
