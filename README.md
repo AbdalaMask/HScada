@@ -19,9 +19,13 @@ HScada的诞生是为了集成工业桌面软件开发常用的功能
 欢迎大家提宝贵的意见和bug. 
 我将持续维护这个框架.
 你的支持,就是我的动力
+
+
 # HScada支持的PLC
 Siemens S7 PLC
+
 Mitsubishi MC PLC
+
 
 # 项目中引用的开源框架
 sqlsugar: https://github.com/sunkaixuan/SqlSugar
@@ -30,4 +34,5 @@ Metro UI: https://github.com/MahApps/MahApps.Metro
 
 # 接下来的开发路线
 .变量配置的导入导出功能
+
 .扩展工业控件库
