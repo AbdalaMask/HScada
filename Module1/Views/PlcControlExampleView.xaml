@@ -18,7 +18,7 @@
         复选框
         VarName :PLC变量 只能是bit类型
         -->
-        <plc:CheckBox VarName="plc1.group1.myb"  
+        <plc:CheckBox VarName="新plc.变量组.请重命名_7"  
                       Canvas.Left="231" 
                       Canvas.Top="151" />
 
@@ -31,7 +31,7 @@
         <plc:ToggleSwitch Name="toggles" 
                           OnLabel="hehe"
                           OffLabel="haha"
-                          VarName="plc1.group1.mybi"   
+                          VarName="新plc.变量组.请重命名_7"   
                           Canvas.Left="285"
                           Canvas.Top="148" />
 
@@ -42,10 +42,10 @@
         <plc:TextArea VarName="plc1.group1.mybt"
                       Canvas.Left="166" 
                       Canvas.Top="247"    />
-        <plc:TextArea VarName="plc1.group1.mybty"
+        <plc:TextArea VarName="新plc.变量组.请重命名_19"
                       Canvas.Left="166"
                       Canvas.Top="83"    />
-        <plc:TextArea VarName="plc1.group1.mybi_1" 
+        <plc:TextArea VarName="新plc.变量组.请重命名_7" 
                       Canvas.Left="166" Canvas.Top="147" />
         <plc:TextArea VarName="plc1.group1.myit_2"
                       Canvas.Left="166"
@@ -62,7 +62,7 @@
         TickPlacement           :刻度的位置
         AutoToolTipPlacement    :气泡的位置
         -->
-        <plc:Slider  VarName="plc1.group1.mybte" 
+        <plc:Slider  VarName="新plc.变量组.请重命名_19" 
                      Orientation="Horizontal"
                      TickFrequency="30"                     
                      Minimum="0"
@@ -79,7 +79,7 @@
         Maximum                 :上限
 
         -->
-        <plc:ProgressBar VarName="plc1.group1.mbtye" 
+        <plc:ProgressBar VarName="新plc.变量组.请重命名_19" 
                          Width="250"
                          Height="5" 
                          Background="LightGray"

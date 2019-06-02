@@ -7,13 +7,14 @@ using System.ComponentModel;
 using System.Windows;
 using System.Windows.Navigation;
 using HScada.SystemElement.Contract;
+using HScada.SystemElement;
 
 namespace Client
 {
     /// <summary>
     /// App.xaml 的交互逻辑
     /// </summary>
-    public partial class App : PrismApplication
+    public partial class App : HScadaApp
     {
 
         protected override void OnStartup(StartupEventArgs e)
@@ -29,17 +30,8 @@ namespace Client
 
 
         }
-        protected override Window CreateShell()
-        {
-            Shell shell = Container.Resolve<Shell>();
-            return shell;
-        }
 
-        protected override void RegisterTypes(IContainerRegistry containerRegistry)
-        {
-            containerRegistry.RegisterSingleton<IMessagebox, HScada.SystemElement.Messagebox>();
-        }
-
+        //模块注册
         protected override void ConfigureModuleCatalog(IModuleCatalog moduleCatalog)
         {
             moduleCatalog.AddModule<HScada.Services.Module_ServicesModule>();

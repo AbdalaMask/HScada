@@ -1,9 +1,8 @@
-﻿<prism:PrismApplication x:Class="Client.App"
+﻿<hscada:HScadaApp x:Class="Client.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-                        xmlns:Controls="http://metro.mahapps.com/winfx/xaml/controls"
-             xmlns:prism="http://prismlibrary.com/">
-    <Application.Resources>
+             xmlns:hscada="clr-namespace:HScada.SystemElement;assembly=HScada.SystemElement">
+    <hscada:HScadaApp.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
                 <ResourceDictionary  Source="pack://application:,,,/HScada.SystemElement;component/Resources/HbbStyle.xaml"/>
@@ -13,6 +12,6 @@
 
 
         </ResourceDictionary>
-    </Application.Resources>
-</prism:PrismApplication>
+    </hscada:HScadaApp.Resources>
+</hscada:HScadaApp>
 
