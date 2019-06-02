@@ -82,6 +82,8 @@
         <plc:ProgressBar VarName="新plc.变量组.请重命名_19" 
                          Width="250"
                          Height="5" 
+                         Minimum="0"
+                         Maximum="255"
                          Background="LightGray"
                          Canvas.Left="229" Canvas.Top="59" />
     </Canvas>
