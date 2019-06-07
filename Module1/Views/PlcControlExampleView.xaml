@@ -6,6 +6,7 @@
              xmlns:vm="clr-namespace:Module1.ViewModels"
              xmlns:local="clr-namespace:Module1.Views"
              xmlns:plc="http://hbb.HScada/PlcControl"
+             xmlns:plcuc="clr-namespace:Module1.PlcUc"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
     <UserControl.DataContext>
@@ -14,6 +15,10 @@
     <UserControl.Resources>
     </UserControl.Resources>
     <Canvas>
+        <plcuc:Plc_Slider Value="新plc.变量组.请重命名_19"
+                          Max="新plc.变量组.请重命名_20"
+                          Canvas.Left="489" 
+                          Canvas.Top="23" />
         <!--
         复选框
         VarName :PLC变量 只能是bit类型
@@ -43,8 +48,8 @@
                       Canvas.Left="166" 
                       Canvas.Top="247"    />
         <plc:TextArea VarName="新plc.变量组.请重命名_19"
-                      Canvas.Left="166"
-                      Canvas.Top="83"    />
+                      Canvas.Left="426"
+                      Canvas.Top="98"     />
         <plc:TextArea VarName="新plc.变量组.请重命名_7" 
                       Canvas.Left="166" Canvas.Top="147" />
         <plc:TextArea VarName="plc1.group1.myit_2"
@@ -66,11 +71,11 @@
                      Orientation="Horizontal"
                      TickFrequency="30"                     
                      Minimum="0"
-                     Maximum="255"
+                     Maximum="3"
                      TickPlacement="TopLeft"
                      AutoToolTipPlacement="TopLeft"
-                     Canvas.Left="229"
-                     Canvas.Top="82" 
+                     Canvas.Left="489"
+                     Canvas.Top="97" 
                      Width="250"   />
 
         <!--进度条
@@ -83,8 +88,21 @@
                          Width="250"
                          Height="5" 
                          Minimum="0"
-                         Maximum="255"
+                         Maximum="3"
                          Background="LightGray"
-                         Canvas.Left="229" Canvas.Top="59" />
+                         Canvas.Left="489" Canvas.Top="61" />
+        <plc:TextArea VarName="新plc.变量组.请重命名_20"
+            Canvas.Left="426"
+            Canvas.Top="142"    />
+        <plc:Slider  VarName="新plc.变量组.请重命名_20" 
+            Orientation="Horizontal"
+            TickFrequency="30"                     
+            Minimum="0"
+            Maximum="3"
+            TickPlacement="TopLeft"
+            AutoToolTipPlacement="TopLeft"
+            Canvas.Left="489"
+            Canvas.Top="141" 
+            Width="250"   />
     </Canvas>
 </UserControl>

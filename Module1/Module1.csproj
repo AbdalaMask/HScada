@@ -113,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module1Module.cs" />
+    <Compile Include="PlcUc\Plc_Slider.xaml.cs">
+      <DependentUpon>Plc_Slider.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
@@ -171,6 +174,10 @@
     <Resource Include="Resource\1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="PlcUc\Plc_Slider.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ColorExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
