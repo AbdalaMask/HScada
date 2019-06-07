@@ -17,7 +17,12 @@
             />
         <CheckBox IsChecked="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,true 2,true other,false',Converter={StaticResource comct}}"
                   Style="{x:Null}"
+                  Content="1或2时 打钩   1红2绿其他蓝"
                   Background="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,#ffff0000 2,#ff00ff00 other,#ff0000ff',Converter={StaticResource comct}}"
                   />
+        <TextBlock Text="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,值是1 2,值是2 other,值不是1也不是2',Converter={StaticResource comct}}"/>
+        <TextBlock Text="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,只1或2可见     2,只1或2可见          other,其他不可见',Converter={StaticResource comct}}"
+                   Visibility="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,visible 2,visible other,hidden',Converter={StaticResource comct}}"
+                   />
     </StackPanel>
 </hp:VCBase>

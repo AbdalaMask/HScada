@@ -49,7 +49,7 @@
                       Canvas.Top="247"    />
         <plc:TextArea VarName="新plc.变量组.请重命名_19"
                       Canvas.Left="426"
-                      Canvas.Top="98"     />
+                      Canvas.Top="140"     />
         <plc:TextArea VarName="新plc.变量组.请重命名_7" 
                       Canvas.Left="166" Canvas.Top="147" />
         <plc:TextArea VarName="plc1.group1.myit_2"
@@ -75,7 +75,7 @@
                      TickPlacement="TopLeft"
                      AutoToolTipPlacement="TopLeft"
                      Canvas.Left="489"
-                     Canvas.Top="97" 
+                     Canvas.Top="139" 
                      Width="250"   />
 
         <!--进度条
@@ -90,10 +90,10 @@
                          Minimum="0"
                          Maximum="3"
                          Background="LightGray"
-                         Canvas.Left="489" Canvas.Top="61" />
+                         Canvas.Left="489" Canvas.Top="103" />
         <plc:TextArea VarName="新plc.变量组.请重命名_20"
             Canvas.Left="426"
-            Canvas.Top="142"    />
+            Canvas.Top="184"    />
         <plc:Slider  VarName="新plc.变量组.请重命名_20" 
             Orientation="Horizontal"
             TickFrequency="30"                     
@@ -102,7 +102,7 @@
             TickPlacement="TopLeft"
             AutoToolTipPlacement="TopLeft"
             Canvas.Left="489"
-            Canvas.Top="141" 
+            Canvas.Top="183" 
             Width="250"   />
     </Canvas>
 </UserControl>
