@@ -1,7 +1,8 @@
 ﻿<hscada:HScadaApp x:Class="Client.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:hscada="clr-namespace:HScada.SystemElement;assembly=HScada.SystemElement">
+                  xmlns:hscada ="clr-namespace:HScada.SystemElement;assembly=HScada.SystemElement"
+             xmlns:converter="clr-namespace:HScada.PLCModule.Converters;assembly=HScada.PLCModule">
     <hscada:HScadaApp.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
@@ -10,7 +11,7 @@
                 <ResourceDictionary  Source="pack://application:,,,/HScada.PLCModule;component/Themes/Generic.xaml"/>
             </ResourceDictionary.MergedDictionaries>
 
-
+            <converter:CommonCoverter x:Key="comct"/>
         </ResourceDictionary>
     </hscada:HScadaApp.Resources>
 </hscada:HScadaApp>
