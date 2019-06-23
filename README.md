@@ -29,6 +29,8 @@ Siemens S7 PLC
 
 Mitsubishi MC PLC
 
+Modbus Tcp PLC
+
 
 # 项目中引用的开源框架
 sqlsugar: https://github.com/sunkaixuan/SqlSugar
@@ -36,7 +38,6 @@ sqlsugar: https://github.com/sunkaixuan/SqlSugar
 Metro UI: https://github.com/MahApps/MahApps.Metro
 
 # 接下来的开发路线
-.modbus 协议支持
 
 .变量配置的导入导出功能
 
