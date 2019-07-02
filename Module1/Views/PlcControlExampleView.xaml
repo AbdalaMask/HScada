@@ -44,7 +44,7 @@
         文本域
         VarName PLC变量 可以是任意类型的变量
         -->
-        <plc:TextArea VarName="plc1.group1.mybt"
+        <plc:TextArea VarName="新plc.变量组.请重命名_1"
                       Canvas.Left="166" 
                       Canvas.Top="247"    />
         <plc:TextArea VarName="新plc.变量组.请重命名_19"
