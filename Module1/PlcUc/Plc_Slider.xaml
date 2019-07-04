@@ -7,7 +7,9 @@
              xmlns:hp="http://hbb.HScada/PlcControl"
              mc:Ignorable="d" 
              d:DesignHeight="450" d:DesignWidth="800">
-    <StackPanel>
+    <StackPanel Width="{Binding RelativeSource={RelativeSource AncestorType=hp:VCBase},Path=ActualWidth}"
+                Height="{Binding RelativeSource={RelativeSource AncestorType=hp:VCBase},Path=ActualHeight}"
+                >
         <Slider Minimum="0" Style="{x:Null}" x:Name="slider"
             Maximum="{Binding Vars[Max].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
             Value="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
@@ -15,14 +17,19 @@
             MinHeight="20"
             Thumb.DragCompleted="Slider_DragCompleted"
             />
-        <CheckBox IsChecked="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,true 2,true other,false',Converter={StaticResource comct}}"
+        <CheckBox Grid.Row="1" IsChecked="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,true 2,true other,false',Converter={StaticResource comct}}"
                   Style="{x:Null}"
                   Content="1或2时 打钩   1红2绿其他蓝"
                   Background="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,#ffff0000 2,#ff00ff00 other,#ff0000ff',Converter={StaticResource comct}}"
                   />
-        <TextBlock Text="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,值是1 2,值是2 other,值不是1也不是2',Converter={StaticResource comct}}"/>
-        <TextBlock Text="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,只1或2可见     2,只1或2可见          other,其他不可见',Converter={StaticResource comct}}"
+        <!---->
+        <Label>
+            <TextBlock  Grid.Row="2" Text="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,值是1 2,值是2 other,值不是1也不是2',Converter={StaticResource comct}}"/>
+        </Label>
+        <Label>
+            <TextBlock Grid.Row="3"  Text="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,只1或2可见     2,只1或2可见          other,其他不可见',Converter={StaticResource comct}}"
                    Visibility="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,visible 2,visible other,hidden',Converter={StaticResource comct}}"
                    />
+        </Label>
     </StackPanel>
 </hp:VCBase>
