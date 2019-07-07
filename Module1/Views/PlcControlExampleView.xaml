@@ -15,6 +15,24 @@
     <UserControl.Resources>
     </UserControl.Resources>
     <Canvas>
+
+        <plc:VCBase  plc:VcHelper.PlcVar1="新plc.变量组.请重命名_2">
+            <StackPanel>
+                <Border HorizontalAlignment="Center" 
+                        Background="{Binding Vars[PlcVar1].Value,
+                            ConverterParameter='0,#ff0000 1,#000000 2,#00ff00 3,#0000ff',
+                            Converter={StaticResource comct}}"
+                        Grid.Row="0"
+                        Width="40" 
+                        Height="60"
+                        CornerRadius="10,10,0,0" 
+                        />
+                <Rectangle Fill="LightGray" 
+                           Grid.Row="1"
+                           Height="5"
+                           Width="45"/>
+            </StackPanel>
+        </plc:VCBase>
         <plcuc:Plc_Slider Value="新plc.变量组.请重命名_19"
                           Max="新plc.变量组.请重命名_20"
                           Canvas.Left="489" 
@@ -50,7 +68,7 @@
         <plc:TextArea VarName="新plc.变量组.请重命名_19"
                       Canvas.Left="426"
                       Canvas.Top="140"     />
-        <plc:TextArea VarName="新plc.变量组.请重命名_7" 
+        <plc:TextArea VarName="新plc.变量组.请重命名_2" 
                       Canvas.Left="166" Canvas.Top="147" />
         <plc:TextArea VarName="plc1.group1.myit_2"
                       Canvas.Left="166"

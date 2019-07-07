@@ -129,9 +129,13 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="ViewModels\ChartsViewModel.cs" />
     <Compile Include="ViewModels\PlcControlExampleViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="ViewModels\SqliteTestViewModel.cs" />
+    <Compile Include="Views\ChartsView.xaml.cs">
+      <DependentUpon>ChartsView.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Views\ColorExampleView.xaml.cs">
       <DependentUpon>ColorExampleView.xaml</DependentUpon>
     </Compile>
@@ -178,6 +182,10 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="Views\ChartsView.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="Views\ColorExampleView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -205,6 +213,11 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resource\2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="LiveCharts.Wpf">
+      <Version>0.9.7</Version>
+    </PackageReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -47,6 +47,13 @@ namespace Module1
 
             menus.Add(new MenuMes
             {
+                IconName = "Material_ChartBar",
+                MenuName ="LiveCharts示例",
+                PageType = typeof(Views.ChartsView)
+            });
+
+            menus.Add(new MenuMes
+            {
                 IconName = "Material_TableEdit",
                 MenuName = "PLC变量配置",
                 PageType = typeof(PlcConfigView)
