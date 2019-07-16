@@ -16,7 +16,7 @@
     </UserControl.Resources>
     <Canvas>
 
-        <plc:VCBase  plc:VcHelper.PlcVar1="新plc.变量组.请重命名_2">
+        <plc:VCBase  plc:VcHelper.PlcVar1="新plc.变量组.请重命名_19">
             <StackPanel>
                 <Border HorizontalAlignment="Center" 
                         Background="{Binding Vars[PlcVar1].Value,
