@@ -55,9 +55,54 @@ namespace Module1.PlcUc
             var sv = this.slider.Value;
             Task.Run(() =>
             {
-                v.Write(Math.Round(sv,2));
-
+                switch ((HScada.PLCModule.Enum.DataType)v.DataType)
+                {
+                    case HScada.PLCModule.Enum.DataType.Bit:
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Byte:
+                        v.Write((byte)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Short:
+                        v.Write((short)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.UShort:
+                        v.Write((ushort)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Int:
+                        v.Write((int)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.UInt:
+                        v.Write((uint)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Long:
+                        v.Write((long)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.ULong:
+                        v.Write((ulong)Math.Round(sv));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Float:
+                        v.Write(Math.Round(sv, 2));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Double:
+                        v.Write(Math.Round(sv, 2));
+                        break;
+                    case HScada.PLCModule.Enum.DataType.String:
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Coil:
+                        break;
+                    case HScada.PLCModule.Enum.DataType.Discrete:
+                        break;
+                    default:
+                        break;
+                }
             });
+        }
+
+
+        private void slider_MouseLeftButtonUp(object sender, MouseButtonEventArgs e)
+        {
+            Slider_DragCompleted(null, null);
+
         }
     }
 }

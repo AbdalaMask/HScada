@@ -14,67 +14,98 @@
     </UserControl.DataContext>
     <UserControl.Resources>
     </UserControl.Resources>
-    <Canvas>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+        <TextBlock Grid.Row="0" Foreground="Red" Text="控件示例使用mitsubishi MC PLC测试,变量配置已经上传到git,开始MC 虚拟plc即可立即测试"/>
+        <TabControl Grid.Row="1">
+            <TabItem Header="plc常用控件" Style="{x:Null}">
+                <Canvas>
+                    <!--
+                拨动开关
+                OnLabel :   on状态时要显示label,可以不设置
+                offLabel:   off状态时要显示label,可以不设置
+                VarName:    PLC变量 只能是bit类型
+                -->
+                    <plc:ToggleSwitch Name="toggles" 
+                          OnLabel="hehe"
+                          OffLabel="haha"
+                          VarName="新plc.变量组.请重命名_7"   
+                          Canvas.Left="203"
+                          Canvas.Top="30" />
+                    <!--
+                复选框
+                VarName :PLC变量 只能是bit类型
+                -->
+                    <plc:CheckBox VarName="新plc.变量组.请重命名_7"  
+                      Canvas.Left="149" 
+                      Canvas.Top="33" />
 
-        <plc:VCBase  plc:VcHelper.PlcVar1="新plc.变量组.请重命名_19">
-            <StackPanel>
-                <Border HorizontalAlignment="Center" 
+                    <!--
+                文本域
+                VarName PLC变量 可以是任意类型的变量
+                -->
+                    <plc:TextArea VarName="新plc.变量组.请重命名_1"
+                      Canvas.Left="415" 
+                      Canvas.Top="174"    />
+                    <plc:TextArea VarName="新plc.变量组.请重命名_7" 
+                      Canvas.Left="84" Canvas.Top="29" />
+                    <plc:TextArea VarName="plc1.group1.myit_2"
+                      Canvas.Left="352"
+                      Canvas.Top="129"    />
+
+                </Canvas>
+            </TabItem>
+            <TabItem Header="plc变量绑定测试" Style="{x:Null}">
+                <Canvas>
+                    <TextBlock Text="复制一个变量到文本框中,下面的textArea控件将绑定到这个plc变量上" Canvas.Left="96" Canvas.Top="71"/>
+                    <TextBox Text="{Binding TestVarNameBinding}" Canvas.Left="96" Width="120" RenderTransformOrigin="2.144,4.731" Canvas.Top="101"/>
+                    <plc:TextArea VarName="{Binding DataContext.TestVarNameBinding,RelativeSource={RelativeSource AncestorType=Canvas}}" Canvas.Left="96" Canvas.Top="152" Width="120" />
+
+                </Canvas>
+            </TabItem>
+            <TabItem Header="简单的使用vcbase" Style="{x:Null}">
+                <Canvas>
+                    <!--不创建userControl的方式-->
+                    <plc:VCBase  plc:VcHelper.PlcVar1="新plc.变量组.请重命名_19">
+                        <StackPanel>
+                            <Border HorizontalAlignment="Center" 
                         Background="{Binding Vars[PlcVar1].Value,
-                            ConverterParameter='0,#ff0000 1,#000000 2,#00ff00 3,#0000ff',
+                            ConverterParameter='0,#77000000 1,#77ff0000 2,#7700ff00 3,#770000ff',
                             Converter={StaticResource comct}}"
                         Grid.Row="0"
                         Width="40" 
                         Height="60"
                         CornerRadius="10,10,0,0" 
                         />
-                <Rectangle Fill="LightGray" 
+                            <Rectangle Fill="LightGray" 
                            Grid.Row="1"
                            Height="5"
                            Width="45"/>
-            </StackPanel>
-        </plc:VCBase>
-        <plcuc:Plc_Slider Value="新plc.变量组.请重命名_19"
-                          Max="新plc.变量组.请重命名_20"
+                        </StackPanel>
+                    </plc:VCBase>
+                    <plc:TextArea VarName="新plc.变量组.请重命名_19" Canvas.Left="122" Canvas.Top="125" />
+                    <TextBlock Canvas.Left="122" TextWrapping="Wrap" Canvas.Top="106">
+                    <Run  Text="改变plc变量"/>
+                    <Run Foreground="Red" Text="'新plc.变量组.请重命名_19'"/>
+                    <Run  Text="的值为 0、1、2、3"/></TextBlock>
+                </Canvas>
+            </TabItem>
+            <TabItem Header="基于绑定的自定义plc控件" Style="{x:Null}">
+                <Canvas Margin="-3,0,3,0">
+                    <!--创建userControl的方式-->
+                    <plcuc:Plc_Slider Value="新plc.变量组.请重命名_27" x:Name="CusSlide"
+                          Max="新plc.变量组.请重命名_28"
                           Canvas.Left="489" 
                           Canvas.Top="23" />
-        <!--
-        复选框
-        VarName :PLC变量 只能是bit类型
-        -->
-        <plc:CheckBox VarName="新plc.变量组.请重命名_7"  
-                      Canvas.Left="231" 
-                      Canvas.Top="151" />
 
-        <!--
-        拨动开关
-        OnLabel :   on状态时要显示label,可以不设置
-        offLabel:   off状态时要显示label,可以不设置
-        VarName:    PLC变量 只能是bit类型
-        -->
-        <plc:ToggleSwitch Name="toggles" 
-                          OnLabel="hehe"
-                          OffLabel="haha"
-                          VarName="新plc.变量组.请重命名_7"   
-                          Canvas.Left="285"
-                          Canvas.Top="148" />
-
-        <!--
-        文本域
-        VarName PLC变量 可以是任意类型的变量
-        -->
-        <plc:TextArea VarName="新plc.变量组.请重命名_1"
-                      Canvas.Left="166" 
-                      Canvas.Top="247"    />
-        <plc:TextArea VarName="新plc.变量组.请重命名_19"
+                    <plc:TextArea VarName="新plc.变量组.请重命名_27"
                       Canvas.Left="426"
                       Canvas.Top="140"     />
-        <plc:TextArea VarName="新plc.变量组.请重命名_2" 
-                      Canvas.Left="166" Canvas.Top="147" />
-        <plc:TextArea VarName="plc1.group1.myit_2"
-                      Canvas.Left="166"
-                      Canvas.Top="197"    />
 
-        <!--
+                    <!--
         滑动块
         VarName PLC变量 可以是数值类型的变量
         Orientation             :横或竖
@@ -85,42 +116,71 @@
         TickPlacement           :刻度的位置
         AutoToolTipPlacement    :气泡的位置
         -->
-        <plc:Slider  VarName="新plc.变量组.请重命名_19" 
+                    <plc:Slider  VarName="新plc.变量组.请重命名_27" 
                      Orientation="Horizontal"
                      TickFrequency="30"                     
                      Minimum="0"
-                     Maximum="3"
+                     Maximum="{Binding ElementName=CusSlide,Path=Vars[Max].Value}"
                      TickPlacement="TopLeft"
                      AutoToolTipPlacement="TopLeft"
                      Canvas.Left="489"
                      Canvas.Top="139" 
                      Width="250"   />
 
-        <!--进度条
-        VarName PLC变量 可以是数值类型的变量
-        Minimum                 :下限
-        Maximum                 :上限
+                    <!--进度条
+                    VarName PLC变量 可以是数值类型的变量
+                    Minimum                 :下限
+                    Maximum                 :上限
 
-        -->
-        <plc:ProgressBar VarName="新plc.变量组.请重命名_19" 
+                -->
+                    <plc:ProgressBar VarName="新plc.变量组.请重命名_27" 
                          Width="250"
                          Height="5" 
                          Minimum="0"
-                         Maximum="3"
+                         Maximum="{Binding ElementName=CusSlide,Path=Vars[Max].Value}"
                          Background="LightGray"
-                         Canvas.Left="489" Canvas.Top="103" />
-        <plc:TextArea VarName="新plc.变量组.请重命名_20"
+                         Canvas.Left="489" Canvas.Top="258" />
+                    <plc:TextArea VarName="新plc.变量组.请重命名_28"
             Canvas.Left="426"
             Canvas.Top="184"    />
-        <plc:Slider  VarName="新plc.变量组.请重命名_20" 
+                    <plc:Slider Name="max_slider" VarName="新plc.变量组.请重命名_28" 
             Orientation="Horizontal"
             TickFrequency="30"                     
             Minimum="0"
-            Maximum="3"
+            Maximum="10"
             TickPlacement="TopLeft"
             AutoToolTipPlacement="TopLeft"
             Canvas.Left="489"
             Canvas.Top="183" 
             Width="250"   />
-    </Canvas>
+                    <TextBlock Canvas.Left="322" TextWrapping="Wrap" Text="当前值" Canvas.Top="140"/>
+                    <TextBlock Canvas.Left="322" TextWrapping="Wrap" Text="最大值" Canvas.Top="197"/>
+                    <TextBlock Canvas.Left="322" TextWrapping="Wrap" Canvas.Top="35" Text="自定义PLC控件"/>
+                    <TextBlock Canvas.Left="216" TextWrapping="Wrap" Canvas.Top="252"><Run Text="依赖属性可以绑定到别的控件的"/><Run Text="P"/><Run Text="lc变量属性"/><LineBreak/><Run/></TextBlock>
+
+                </Canvas>
+            </TabItem>
+
+            <TabItem Header="基于事件的算定义plc控件" Style="{x:Null}">
+                <Canvas>
+                    <StackPanel>
+                        <TextBlock Text="绑定虽然大部分时候是很方便的,但是比较不灵活,基于事件可以方便很多"/>
+                        <TextBlock Text="通过重写vcbase的两个方法,达到自动订阅变量(onvaluechanged)更改的事件及变量初始化事件(init)" />
+                        <TextBlock Text="这两个事件已经做好了 自动取消订阅" />
+                    </StackPanel>
+                    <plcuc:EventBasedUserControl IsEnableVar="新plc.变量组.请重命名_43"
+                                                     ValueVar="新plc.变量组.请重命名_25" Canvas.Left="32" Canvas.Top="91" Width="135"/>
+                    <plc:TextArea VarName="新plc.变量组.请重命名_25" Canvas.Left="32" Canvas.Top="141" Width="135"/>
+                    <plc:ToggleSwitch VarName="新plc.变量组.请重命名_43"
+                                      OnLabel="使能"
+                                      OffLabel="不使能"
+                                      Canvas.Left="32" Canvas.Top="187" />
+                    <TextBlock Canvas.Left="190" TextWrapping="Wrap" Text="修改plc的值,自定义控件的文本将改变 " Canvas.Top="148"/>
+                    <TextBlock Canvas.Left="190" TextWrapping="Wrap" Text="切换自定义控件是否可编辑 " Canvas.Top="193"/>
+                    <TextBlock Canvas.Left="190" TextWrapping="Wrap" Text="自定义控件(没有向plc写入的功能,需要的话可以自己实现)" Canvas.Top="97"/>
+                </Canvas>
+            </TabItem>
+        </TabControl>
+
+    </Grid>
 </UserControl>

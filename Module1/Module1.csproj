@@ -113,6 +113,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Module1Module.cs" />
+    <Compile Include="PlcUc\EventBasedUserControl.xaml.cs">
+      <DependentUpon>EventBasedUserControl.xaml</DependentUpon>
+    </Compile>
     <Compile Include="PlcUc\Plc_Slider.xaml.cs">
       <DependentUpon>Plc_Slider.xaml</DependentUpon>
     </Compile>
@@ -178,6 +181,10 @@
     <Resource Include="Resource\1.png" />
   </ItemGroup>
   <ItemGroup>
+    <Page Include="PlcUc\EventBasedUserControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="PlcUc\Plc_Slider.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>

@@ -10,11 +10,12 @@
     <StackPanel Width="{Binding RelativeSource={RelativeSource AncestorType=hp:VCBase},Path=ActualWidth}"
                 Height="{Binding RelativeSource={RelativeSource AncestorType=hp:VCBase},Path=ActualHeight}"
                 >
-        <Slider Minimum="0" Style="{x:Null}" x:Name="slider"
-            Maximum="{Binding Vars[Max].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
+        <Slider Minimum="0" Style="{x:Null}" x:Name="slider"  
+            Maximum="{Binding Vars[Max].Value}"
             Value="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged}"
             MinWidth="250"
             MinHeight="20"
+                PreviewMouseLeftButtonUp="slider_MouseLeftButtonUp"
             Thumb.DragCompleted="Slider_DragCompleted"
             />
         <CheckBox Grid.Row="1" IsChecked="{Binding Vars[Value].Value,Mode=OneWay,UpdateSourceTrigger=PropertyChanged,ConverterParameter='1,true 2,true other,false',Converter={StaticResource comct}}"
