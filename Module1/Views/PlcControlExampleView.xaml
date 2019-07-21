@@ -20,7 +20,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <TextBlock Grid.Row="0" Foreground="Red" Text="控件示例使用mitsubishi MC PLC测试,变量配置已经上传到git,开始MC 虚拟plc即可立即测试"/>
-        <TabControl Grid.Row="1">
+        <TabControl Grid.Row="1" TabStripPlacement="Left">
             <TabItem Header="plc常用控件" Style="{x:Null}">
                 <Canvas>
                     <!--
