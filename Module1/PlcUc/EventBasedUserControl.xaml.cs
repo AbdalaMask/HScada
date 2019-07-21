@@ -58,11 +58,11 @@ namespace Module1.PlcUc
         {
             base.Init();
 
-            var isenablePlcVar = Vars[nameof(this.IsEnableVar)];
-            var ValueVar = Vars[nameof(this.ValueVar)];
             //注意这里是异步线程
             this.Dispatcher.Invoke(() =>
             {
+                var isenablePlcVar = Vars[nameof(this.IsEnableVar)];
+                var ValueVar = Vars[nameof(this.ValueVar)];
                 tb.Text = ValueVar?.Value?.ToString() ?? "";
                 if (bool.TryParse(isenablePlcVar?.Value?.ToString() ?? "False", out bool plcBool))
                 {
